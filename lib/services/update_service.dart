@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
@@ -26,7 +26,7 @@ class UpdateService {
   static const String githubOwner = 'andreshim9';
   static const String githubRepo = 'my-weather';
   static const String latestReleaseApi =
-      'https://api.github.com/repos///releases/latest';
+      'https://api.github.com/repos/$githubOwner/$githubRepo/releases/latest';
 
   /// GitHub Releases API를 조회하여 새 버전이 있는지 확인
   static Future<UpdateInfo?> checkUpdate() async {
@@ -35,10 +35,14 @@ class UpdateService {
     try {
       final packageInfo = await PackageInfo.fromPlatform();
       final currentVersion = packageInfo.version; // e.g. 1.0.0
+      debugPrint('[UpdateService] Current App Version: $currentVersion');
 
       final dio = Dio(BaseOptions(
         connectTimeout: const Duration(seconds: 5),
         receiveTimeout: const Duration(seconds: 5),
+        headers: {
+          'Accept': 'application/vnd.github.v3+json',
+        },
       ));
 
       final response = await dio.get(latestReleaseApi);
@@ -61,6 +65,8 @@ class UpdateService {
         }
 
         final hasNewer = _isVersionGreater(cleanTag, currentVersion);
+        debugPrint(
+            '[UpdateService] Latest Release: $cleanTag (Current: $currentVersion, HasNewer: $hasNewer, ApkUrl: $apkUrl)');
 
         return UpdateInfo(
           latestVersion: cleanTag,
@@ -69,8 +75,8 @@ class UpdateService {
           hasUpdate: hasNewer && apkUrl.isNotEmpty,
         );
       }
-    } catch (_) {
-      // 오프라인이거나 릴리즈가 없을 때 조용히 패스
+    } catch (e, stack) {
+      debugPrint('[UpdateService] Update check failed: $e\n$stack');
     }
     return null;
   }
