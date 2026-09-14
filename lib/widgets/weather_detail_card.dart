@@ -112,13 +112,20 @@ class WeatherDetailCard extends StatelessWidget {
           LayoutBuilder(
             builder: (context, constraints) {
               final isNarrow = constraints.maxWidth < 320;
+              final humidityStr = '%';
+              final rainStr = '%';
+              final windStr = ' m/s';
+              final uvStr = weather.uvIndex <= 2
+                  ? '낮음'
+                  : (weather.uvIndex <= 5 ? '보통' : '강함');
+
               if (isNarrow) {
                 return Column(
                   children: [
                     _buildBigDetailBox(
                       icon: Icons.water_drop,
                       label: '습도',
-                      value: '%',
+                      value: humidityStr,
                       iconColor: AppColors.primary,
                       boxBg: boxBg,
                       textPrimary: textPrimary,
@@ -128,7 +135,7 @@ class WeatherDetailCard extends StatelessWidget {
                     _buildBigDetailBox(
                       icon: Icons.umbrella,
                       label: '비 올 확률',
-                      value: '%',
+                      value: rainStr,
                       iconColor: AppColors.primary,
                       boxBg: boxBg,
                       textPrimary: textPrimary,
@@ -138,7 +145,7 @@ class WeatherDetailCard extends StatelessWidget {
                     _buildBigDetailBox(
                       icon: Icons.air,
                       label: '바람 세기',
-                      value: ' m/s',
+                      value: windStr,
                       iconColor: AppColors.accentGreen,
                       boxBg: boxBg,
                       textPrimary: textPrimary,
@@ -148,9 +155,7 @@ class WeatherDetailCard extends StatelessWidget {
                     _buildBigDetailBox(
                       icon: Icons.wb_sunny,
                       label: '햇빛(자외선)',
-                      value: weather.uvIndex <= 2
-                          ? '낮음'
-                          : (weather.uvIndex <= 5 ? '보통' : '강함'),
+                      value: uvStr,
                       iconColor: AppColors.accentSun,
                       boxBg: boxBg,
                       textPrimary: textPrimary,
@@ -168,7 +173,7 @@ class WeatherDetailCard extends StatelessWidget {
                         child: _buildBigDetailBox(
                           icon: Icons.water_drop,
                           label: '습도',
-                          value: '%',
+                          value: humidityStr,
                           iconColor: AppColors.primary,
                           boxBg: boxBg,
                           textPrimary: textPrimary,
@@ -180,7 +185,7 @@ class WeatherDetailCard extends StatelessWidget {
                         child: _buildBigDetailBox(
                           icon: Icons.umbrella,
                           label: '비 올 확률',
-                          value: '%',
+                          value: rainStr,
                           iconColor: AppColors.primary,
                           boxBg: boxBg,
                           textPrimary: textPrimary,
@@ -196,7 +201,7 @@ class WeatherDetailCard extends StatelessWidget {
                         child: _buildBigDetailBox(
                           icon: Icons.air,
                           label: '바람 세기',
-                          value: ' m/s',
+                          value: windStr,
                           iconColor: AppColors.accentGreen,
                           boxBg: boxBg,
                           textPrimary: textPrimary,
@@ -208,9 +213,7 @@ class WeatherDetailCard extends StatelessWidget {
                         child: _buildBigDetailBox(
                           icon: Icons.wb_sunny,
                           label: '햇빛(자외선)',
-                          value: weather.uvIndex <= 2
-                              ? '낮음'
-                              : (weather.uvIndex <= 5 ? '보통' : '강함'),
+                          value: uvStr,
                           iconColor: AppColors.accentSun,
                           boxBg: boxBg,
                           textPrimary: textPrimary,
