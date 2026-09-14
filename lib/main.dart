@@ -38,7 +38,7 @@ class PetWeatherApp extends StatelessWidget {
       child: Consumer<AppStateProvider>(
         builder: (context, provider, _) {
           return MaterialApp(
-            title: '날씨 & 일출·일몰 스마트 시계',
+            title: 'my-weather',
             debugShowCheckedModeBanner: false,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
