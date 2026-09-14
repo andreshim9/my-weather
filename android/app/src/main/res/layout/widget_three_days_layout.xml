@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/widget_bg_rounded"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:padding="10dp">
 
     <!-- Top Header -->
     <LinearLayout
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingBottom="6dp">
+        android:paddingBottom="4dp">
 
         <TextView
             android:id="@+id/tv_three_location"
@@ -22,15 +22,16 @@
             android:layout_weight="1"
             android:text="📍 내 위치"
             android:textColor="@color/text_primary"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3일간 예보"
-            android:textColor="@color/text_secondary"
-            android:textSize="12sp" />
+            android:textColor="@color/accent_blue"
+            android:textSize="13sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <!-- 3 Days Forecast Columns -->
@@ -58,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="오늘"
                 android:textColor="@color/accent_blue"
-                android:textSize="13sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -67,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textColor="@color/text_secondary"
-                android:textSize="10sp" />
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/tv_day1_icon"
@@ -75,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="☀️"
-                android:textSize="22sp" />
+                android:textSize="26sp" />
 
             <TextView
                 android:id="@+id/tv_day1_temp"
@@ -84,7 +85,7 @@
                 android:layout_marginTop="2dp"
                 android:text="--° / --°"
                 android:textColor="@color/text_primary"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -94,7 +95,8 @@
                 android:layout_marginTop="2dp"
                 android:text="🌅--:-- / 🌇--:--"
                 android:textColor="@color/text_secondary"
-                android:textSize="9sp" />
+                android:textSize="11sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- Day 2: 내일 -->
@@ -114,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:text="내일"
                 android:textColor="@color/accent_sun"
-                android:textSize="13sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -123,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textColor="@color/text_secondary"
-                android:textSize="10sp" />
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/tv_day2_icon"
@@ -131,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="⛅"
-                android:textSize="22sp" />
+                android:textSize="26sp" />
 
             <TextView
                 android:id="@+id/tv_day2_temp"
@@ -140,7 +142,7 @@
                 android:layout_marginTop="2dp"
                 android:text="--° / --°"
                 android:textColor="@color/text_primary"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -150,7 +152,8 @@
                 android:layout_marginTop="2dp"
                 android:text="🌅--:-- / 🌇--:--"
                 android:textColor="@color/text_secondary"
-                android:textSize="9sp" />
+                android:textSize="11sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- Day 3: 모레 -->
@@ -169,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:text="모레"
                 android:textColor="@color/accent_green"
-                android:textSize="13sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -178,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textColor="@color/text_secondary"
-                android:textSize="10sp" />
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/tv_day3_icon"
@@ -186,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="🌧️"
-                android:textSize="22sp" />
+                android:textSize="26sp" />
 
             <TextView
                 android:id="@+id/tv_day3_temp"
@@ -195,7 +198,7 @@
                 android:layout_marginTop="2dp"
                 android:text="--° / --°"
                 android:textColor="@color/text_primary"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -205,7 +208,8 @@
                 android:layout_marginTop="2dp"
                 android:text="🌅--:-- / 🌇--:--"
                 android:textColor="@color/text_secondary"
-                android:textSize="9sp" />
+                android:textSize="11sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
