@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingBottom="4dp">
+        android:paddingBottom="6dp">
 
         <TextView
             android:id="@+id/tv_three_location"
@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:text="📍 내 위치"
             android:textColor="@color/text_primary"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:text="3일간 예보"
             android:textColor="@color/accent_blue"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -47,7 +47,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginEnd="4dp"
+            android:layout_marginEnd="6dp"
             android:background="@drawable/widget_card_item_bg"
             android:orientation="vertical"
             android:gravity="center"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="오늘"
                 android:textColor="@color/accent_blue"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textColor="@color/text_secondary"
-                android:textSize="11sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_day1_icon"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="☀️"
-                android:textSize="26sp" />
+                android:textSize="32sp" />
 
             <TextView
                 android:id="@+id/tv_day1_temp"
@@ -85,17 +85,17 @@
                 android:layout_marginTop="2dp"
                 android:text="--° / --°"
                 android:textColor="@color/text_primary"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_day1_sun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="🌅--:-- / 🌇--:--"
+                android:layout_marginTop="3dp"
+                android:text="🌅--:-- 🌇--:--"
                 android:textColor="@color/text_secondary"
-                android:textSize="11sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -104,7 +104,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginEnd="4dp"
+            android:layout_marginEnd="6dp"
             android:background="@drawable/widget_card_item_bg"
             android:orientation="vertical"
             android:gravity="center"
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:text="내일"
                 android:textColor="@color/accent_sun"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textColor="@color/text_secondary"
-                android:textSize="11sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_day2_icon"
@@ -133,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="⛅"
-                android:textSize="26sp" />
+                android:textSize="32sp" />
 
             <TextView
                 android:id="@+id/tv_day2_temp"
@@ -142,17 +142,17 @@
                 android:layout_marginTop="2dp"
                 android:text="--° / --°"
                 android:textColor="@color/text_primary"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_day2_sun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="🌅--:-- / 🌇--:--"
+                android:layout_marginTop="3dp"
+                android:text="🌅--:-- 🌇--:--"
                 android:textColor="@color/text_secondary"
-                android:textSize="11sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -172,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:text="모레"
                 android:textColor="@color/accent_green"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -181,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textColor="@color/text_secondary"
-                android:textSize="11sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_day3_icon"
@@ -189,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="🌧️"
-                android:textSize="26sp" />
+                android:textSize="32sp" />
 
             <TextView
                 android:id="@+id/tv_day3_temp"
@@ -198,17 +198,17 @@
                 android:layout_marginTop="2dp"
                 android:text="--° / --°"
                 android:textColor="@color/text_primary"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_day3_sun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="🌅--:-- / 🌇--:--"
+                android:layout_marginTop="3dp"
+                android:text="🌅--:-- 🌇--:--"
                 android:textColor="@color/text_secondary"
-                android:textSize="11sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>

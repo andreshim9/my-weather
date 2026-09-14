@@ -42,7 +42,7 @@ class ThreeDaysForecastWidgetProvider : HomeWidgetProvider() {
                 if (d1Sub.isNotEmpty()) setTextViewText(R.id.tv_day1_subdate, d1Sub)
                 setTextViewText(R.id.tv_day1_icon, d1Icon)
                 setTextViewText(R.id.tv_day1_temp, d1Temp)
-                setTextViewText(R.id.tv_day1_sun, "🌅 $d1Rise  /  🌇 $d1Set")
+                setTextViewText(R.id.tv_day1_sun, "🌅$d1Rise 🌇$d1Set")
 
                 // Day 2: 내일
                 val d2Sub = widgetData.getString("day2_subdate", "") ?: ""
@@ -54,7 +54,7 @@ class ThreeDaysForecastWidgetProvider : HomeWidgetProvider() {
                 if (d2Sub.isNotEmpty()) setTextViewText(R.id.tv_day2_subdate, d2Sub)
                 setTextViewText(R.id.tv_day2_icon, d2Icon)
                 setTextViewText(R.id.tv_day2_temp, d2Temp)
-                setTextViewText(R.id.tv_day2_sun, "🌅 $d2Rise  /  🌇 $d2Set")
+                setTextViewText(R.id.tv_day2_sun, "🌅$d2Rise 🌇$d2Set")
 
                 // Day 3: 모레
                 val d3Sub = widgetData.getString("day3_subdate", "") ?: ""
@@ -66,7 +66,7 @@ class ThreeDaysForecastWidgetProvider : HomeWidgetProvider() {
                 if (d3Sub.isNotEmpty()) setTextViewText(R.id.tv_day3_subdate, d3Sub)
                 setTextViewText(R.id.tv_day3_icon, d3Icon)
                 setTextViewText(R.id.tv_day3_temp, d3Temp)
-                setTextViewText(R.id.tv_day3_sun, "🌅 $d3Rise  /  🌇 $d3Set")
+                setTextViewText(R.id.tv_day3_sun, "🌅$d3Rise 🌇$d3Set")
             }
             appWidgetManager.updateAppWidget(widgetId, views)
         }

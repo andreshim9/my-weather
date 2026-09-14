@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:text="🌅 일출"
                 android:textColor="@color/accent_sun"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -66,7 +66,7 @@
                 android:layout_marginTop="2dp"
                 android:text="06:12"
                 android:textColor="@color/text_primary"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:text="🌞 남중"
                 android:textColor="@color/accent_blue"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -93,7 +93,7 @@
                 android:layout_marginTop="2dp"
                 android:text="12:30"
                 android:textColor="@color/text_primary"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:text="🌇 일몰"
                 android:textColor="@color/accent_sunset"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -120,7 +120,7 @@
                 android:layout_marginTop="2dp"
                 android:text="18:48"
                 android:textColor="@color/text_primary"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
@@ -133,6 +133,6 @@
         android:layout_marginTop="8dp"
         android:text="☀️ 낮의 총 길이: 12시간 36분"
         android:textColor="@color/accent_green"
-        android:textSize="15sp"
+        android:textSize="16sp"
         android:textStyle="bold" />
 </LinearLayout>
