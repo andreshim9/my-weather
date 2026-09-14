@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../constants/app_theme.dart';
 import '../models/month_sun_day_model.dart';
@@ -177,7 +177,7 @@ class WeekViewWidget extends StatelessWidget {
                                 fit: BoxFit.scaleDown,
                                 alignment: Alignment.centerLeft,
                                 child: Text(
-                                  '° / °',
+                                  '${forecast.maxTemp.toStringAsFixed(0)}° / ${forecast.minTemp.toStringAsFixed(0)}°',
                                   style: TextStyle(
                                     color: textPrimary,
                                     fontSize: 14,

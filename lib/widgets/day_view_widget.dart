@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../constants/app_theme.dart';
 import '../models/sun_time_model.dart';
@@ -27,7 +27,7 @@ class DayViewWidget extends StatelessWidget {
 
     final timeFormat = DateFormat('HH:mm');
     final dayLength = sunTime.sunset.difference(sunTime.sunrise);
-    final dayLengthStr = '시간 분';
+    final dayLengthStr = '${dayLength.inHours}시간 ${dayLength.inMinutes % 60}분';
 
     return SingleChildScrollView(
       physics: const AlwaysScrollableScrollPhysics(),
@@ -248,7 +248,7 @@ class DayViewWidget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '시',
+                                '${h.time.hour}시',
                                 style: TextStyle(
                                   color: textSecondary,
                                   fontSize: 14,
@@ -259,7 +259,7 @@ class DayViewWidget extends StatelessWidget {
                               FittedBox(
                                 fit: BoxFit.scaleDown,
                                 child: Text(
-                                  '°',
+                                  '${h.temperature.toStringAsFixed(0)}°',
                                   style: TextStyle(
                                     color: textPrimary,
                                     fontSize: 16,

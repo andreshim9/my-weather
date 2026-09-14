@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../constants/app_theme.dart';
 import '../models/weather_model.dart';
 
@@ -69,7 +69,7 @@ class WeatherDetailCard extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      '°C',
+                      '${weather.temperature.toStringAsFixed(1)}°C',
                       style: TextStyle(
                         color: textPrimary,
                         fontSize: 42,
@@ -87,7 +87,7 @@ class WeatherDetailCard extends StatelessWidget {
                       border: Border.all(color: AppColors.primary.withValues(alpha: 0.4)),
                     ),
                     child: Text(
-                      ' ',
+                      '${weather.weatherDescription} ',
                       style: const TextStyle(
                         color: AppColors.primary,
                         fontSize: 18,
@@ -112,9 +112,9 @@ class WeatherDetailCard extends StatelessWidget {
           LayoutBuilder(
             builder: (context, constraints) {
               final isNarrow = constraints.maxWidth < 320;
-              final humidityStr = '%';
-              final rainStr = '%';
-              final windStr = ' m/s';
+              final humidityStr = '${weather.humidity}%';
+              final rainStr = '${weather.precipitationProbability}%';
+              final windStr = '${weather.windSpeed.toStringAsFixed(1)} m/s';
               final uvStr = weather.uvIndex <= 2
                   ? '낮음'
                   : (weather.uvIndex <= 5 ? '보통' : '강함');

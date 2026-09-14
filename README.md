@@ -1,4 +1,4 @@
-﻿# ☀️ my-weather (날씨 & 일출·일몰 스마트 시계)
+# ☀️ my-weather (날씨 & 일출·일몰 스마트 시계)
 
 실시간 날씨 예보, 정밀 일출·일몰 시간, 24절기 달력, 탁상시계 가로 모드 및 안드로이드 홈 위젯을 제공하는 **플러터(Flutter) 기반 스마트 시계 & 날씨 앱**입니다.
 
@@ -104,15 +104,32 @@ gh release create v1.0.1 build/app/outputs/flutter-apk/my-weather-v1.0.1.apk --t
 
 ---
 
-## 🛠️ 개발 환경 실행 방법
+## 🛠️ 개발 환경 및 로컬 웹(Web) 실행 방법
 
-`ash
-# 의존성 설치
-flutter pub get
-
-# 웹 브라우저 실행
+### 1. 웹 브라우저(Chrome)로 실시간 실행 & 테스트
+코드를 수정하면서 실시간 핫 리로드(Hot Reload)로 웹에서 바로 확인하려면:
+```bash
+# 기본 크롬 브라우저로 실행
 flutter run -d chrome
 
-# 안드로이드 기기/에뮬레이터 실행
+# 포트를 지정하여 실행 (예: 8080 포트)
+flutter run -d chrome --web-port=8080
+```
+
+### 2. 웹 릴리즈 빌드 및 로컬 웹 서버(HTTP)로 확인
+실제 배포용 정적 웹 빌드를 생성하여 독립된 로컬 웹 서버로 테스트하려면:
+```bash
+# 1) 웹 릴리즈 빌드 생성
+flutter build web --release
+
+# 2) Python 내장 웹 서버 실행 (build/web 폴더)
+python -m http.server 8080 --directory build/web
+
+# 3) 브라우저에서 http://localhost:8080 접속하여 확인
+```
+
+### 3. 안드로이드 기기 또는 에뮬레이터로 실행
+```bash
+# 연결된 안드로이드 기기로 실행
 flutter run
-`
+```
