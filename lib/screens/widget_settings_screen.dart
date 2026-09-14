@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../constants/app_theme.dart';
@@ -100,7 +100,7 @@ class _WidgetSettingsScreenState extends State<WidgetSettingsScreen> {
             ),
             const SizedBox(height: 24),
 
-            // Widget 1
+            // Widget 1: 2x1 요약
             const Text(
               '1. 오늘 날씨 & 일출·일몰 요약 위젯 (2x1)',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
@@ -109,7 +109,7 @@ class _WidgetSettingsScreenState extends State<WidgetSettingsScreen> {
             _buildWeatherSunPreview(provider, timeFormat),
 
             const SizedBox(height: 24),
-            // Widget 2
+            // Widget 2: 4x2 태양 상세
             const Text(
               '2. 태양 상세 & 일출·일몰 종합 위젯 (4x2)',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
@@ -118,7 +118,7 @@ class _WidgetSettingsScreenState extends State<WidgetSettingsScreen> {
             _buildSunDetailPreview(provider, timeFormat),
 
             const SizedBox(height: 24),
-            // Widget 3: NEW 3-Day Forecast Widget
+            // Widget 3: 4x2 3일간 예보
             const Text(
               '3. 3일간 날씨 & 일출·일몰 예보 위젯 (4x2) ✨신규',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
@@ -374,7 +374,7 @@ class _WidgetSettingsScreenState extends State<WidgetSettingsScreen> {
           Text(
             '1. 스마트폰 첫 화면의 빈 곳을 손가락으로 2초간 꾹 누릅니다.\n\n'
             '2. 화면 아래에 나타나는 [위젯] 글자를 누릅니다.\n\n'
-            '3. 목록에서 [날씨 & 일출일몰]을 찾아 2x1, 4x2 태양종합, 또는 3일간 예보 위젯을 선택해 바탕화면으로 끌어다 놓습니다.\n\n'
+            '3. 목록에서 [my-weather]를 찾아 2x1 요약, 4x2 태양종합, 또는 3일간 예보 위젯을 선택해 바탕화면으로 끌어다 놓습니다.\n\n'
             '4. 이제 폰을 켤 때마다 큰 글씨로 날씨와 해 뜨고 지는 시간을 바로 볼 수 있습니다!',
             style: TextStyle(
               color: isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,

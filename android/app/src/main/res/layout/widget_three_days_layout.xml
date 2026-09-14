@@ -5,134 +5,207 @@
     android:layout_height="match_parent"
     android:background="@drawable/widget_bg_rounded"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="12dp">
 
     <!-- Top Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:paddingBottom="6dp">
 
         <TextView
             android:id="@+id/tv_three_location"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="내 위치"
+            android:text="📍 내 위치"
             android:textColor="@color/text_primary"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_three_temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="23°C ☀️"
-            android:textColor="@color/accent_blue"
-            android:textSize="17sp"
-            android:textStyle="bold" />
+            android:text="3일간 예보"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
     </LinearLayout>
 
-    <!-- Sun 3 Times Slot (Sunrise, Noon, Sunset) -->
+    <!-- 3 Days Forecast Columns -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/widget_card_item_bg"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:gravity="center">
 
-        <!-- Sunrise -->
+        <!-- Day 1: 오늘 -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/widget_card_item_bg"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="6dp">
 
             <TextView
+                android:id="@+id/tv_day1_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🌅 일출"
-                android:textColor="@color/accent_sun"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_three_sunrise"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="06:12"
-                android:textColor="@color/text_primary"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- Solar Noon -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🌞 남중"
+                android:text="오늘"
                 android:textColor="@color/accent_blue"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_three_noon"
+                android:id="@+id/tv_day1_subdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="12:30"
-                android:textColor="@color/text_primary"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- Sunset -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+                android:text=""
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp" />
 
             <TextView
+                android:id="@+id/tv_day1_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🌇 일몰"
-                android:textColor="@color/accent_sunset"
+                android:layout_marginTop="2dp"
+                android:text="☀️"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tv_day1_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="--° / --°"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_day1_sun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="🌅--:-- / 🌇--:--"
+                android:textColor="@color/text_secondary"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <!-- Day 2: 내일 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/widget_card_item_bg"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="6dp">
+
+            <TextView
+                android:id="@+id/tv_day2_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내일"
+                android:textColor="@color/accent_sun"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_three_sunset"
+                android:id="@+id/tv_day2_subdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="18:48"
+                android:text=""
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_day2_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="⛅"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tv_day2_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="--° / --°"
                 android:textColor="@color/text_primary"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_day2_sun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="🌅--:-- / 🌇--:--"
+                android:textColor="@color/text_secondary"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <!-- Day 3: 모레 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/widget_card_item_bg"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="6dp">
+
+            <TextView
+                android:id="@+id/tv_day3_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="모레"
+                android:textColor="@color/accent_green"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_day3_subdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_day3_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="🌧️"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tv_day3_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="--° / --°"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_day3_sun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="🌅--:-- / 🌇--:--"
+                android:textColor="@color/text_secondary"
+                android:textSize="9sp" />
         </LinearLayout>
     </LinearLayout>
-
-    <!-- Bottom Day Length Info -->
-    <TextView
-        android:id="@+id/tv_three_day_length"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="☀️ 낮의 총 길이: 12시간 36분"
-        android:textColor="@color/accent_green"
-        android:textSize="14sp"
-        android:textStyle="bold" />
 </LinearLayout>

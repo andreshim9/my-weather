@@ -2,7 +2,7 @@ name: my_weather
 description: "A comprehensive Flutter Android app for Weather, Sunrise/Sunset, Landscape Bedside Clock, and Home Widgets."
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: '>=3.0.0 <4.0.0'

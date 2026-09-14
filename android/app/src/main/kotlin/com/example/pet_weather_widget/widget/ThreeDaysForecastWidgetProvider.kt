@@ -29,20 +29,44 @@ class ThreeDaysForecastWidgetProvider : HomeWidgetProvider() {
                 }
                 setOnClickPendingIntent(R.id.widget_container_three_days, pendingIntent)
 
-                val location = widgetData.getString("weather_location", "내 위치")
-                val temp = widgetData.getString("weather_temp", "24°C")
-                val condition = widgetData.getString("weather_condition", "맑음 ☀️")
-                val sunrise = widgetData.getString("sun_sunrise", "06:12")
-                val sunset = widgetData.getString("sun_sunset", "18:48")
-                val noon = widgetData.getString("sun_noon", "12:30")
-                val dayLength = widgetData.getString("sun_day_length", "12시간 36분")
+                val location = widgetData.getString("weather_location", "내 위치") ?: "내 위치"
+                setTextViewText(R.id.tv_three_location, "📍 $location")
 
-                setTextViewText(R.id.tv_three_location, location)
-                setTextViewText(R.id.tv_three_temp, "$temp  $condition")
-                setTextViewText(R.id.tv_three_sunrise, sunrise)
-                setTextViewText(R.id.tv_three_sunset, sunset)
-                setTextViewText(R.id.tv_three_noon, noon)
-                setTextViewText(R.id.tv_three_day_length, "☀️ 낮의 총 길이: $dayLength")
+                // Day 1: 오늘
+                val d1Sub = widgetData.getString("day1_subdate", "") ?: ""
+                val d1Icon = widgetData.getString("day1_icon", "☀️") ?: "☀️"
+                val d1Temp = widgetData.getString("day1_temp", "--° / --°") ?: "--° / --°"
+                val d1Rise = widgetData.getString("day1_sunrise", "06:00") ?: "06:00"
+                val d1Set = widgetData.getString("day1_sunset", "18:00") ?: "18:00"
+                setTextViewText(R.id.tv_day1_title, "오늘")
+                if (d1Sub.isNotEmpty()) setTextViewText(R.id.tv_day1_subdate, d1Sub)
+                setTextViewText(R.id.tv_day1_icon, d1Icon)
+                setTextViewText(R.id.tv_day1_temp, d1Temp)
+                setTextViewText(R.id.tv_day1_sun, "🌅 $d1Rise  /  🌇 $d1Set")
+
+                // Day 2: 내일
+                val d2Sub = widgetData.getString("day2_subdate", "") ?: ""
+                val d2Icon = widgetData.getString("day2_icon", "⛅") ?: "⛅"
+                val d2Temp = widgetData.getString("day2_temp", "--° / --°") ?: "--° / --°"
+                val d2Rise = widgetData.getString("day2_sunrise", "06:00") ?: "06:00"
+                val d2Set = widgetData.getString("day2_sunset", "18:00") ?: "18:00"
+                setTextViewText(R.id.tv_day2_title, "내일")
+                if (d2Sub.isNotEmpty()) setTextViewText(R.id.tv_day2_subdate, d2Sub)
+                setTextViewText(R.id.tv_day2_icon, d2Icon)
+                setTextViewText(R.id.tv_day2_temp, d2Temp)
+                setTextViewText(R.id.tv_day2_sun, "🌅 $d2Rise  /  🌇 $d2Set")
+
+                // Day 3: 모레
+                val d3Sub = widgetData.getString("day3_subdate", "") ?: ""
+                val d3Icon = widgetData.getString("day3_icon", "🌧️") ?: "🌧️"
+                val d3Temp = widgetData.getString("day3_temp", "--° / --°") ?: "--° / --°"
+                val d3Rise = widgetData.getString("day3_sunrise", "06:00") ?: "06:00"
+                val d3Set = widgetData.getString("day3_sunset", "18:00") ?: "18:00"
+                setTextViewText(R.id.tv_day3_title, "모레")
+                if (d3Sub.isNotEmpty()) setTextViewText(R.id.tv_day3_subdate, d3Sub)
+                setTextViewText(R.id.tv_day3_icon, d3Icon)
+                setTextViewText(R.id.tv_day3_temp, d3Temp)
+                setTextViewText(R.id.tv_day3_sun, "🌅 $d3Rise  /  🌇 $d3Set")
             }
             appWidgetManager.updateAppWidget(widgetId, views)
         }
