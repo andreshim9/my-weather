@@ -1,0 +1,49 @@
+name: my_weather
+description: "A comprehensive Flutter Android app for Weather, Sunrise/Sunset, Landscape Bedside Clock, and Home Widgets."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State Management
+  provider: ^6.1.2
+
+  # Network & Data
+  http: ^1.2.1
+  dio: ^5.4.3+1
+  xml2json: ^6.2.3
+  intl: ^0.20.3
+
+  # Location & Sensors
+  geolocator: ^11.0.0
+  geocoding: ^3.0.0
+
+  # Screen & Display
+  wakelock_plus: ^1.2.8
+
+  # Home Screen Widget
+  home_widget: ^0.7.0
+
+  # Storage & Utilities
+  shared_preferences: ^2.2.3
+  url_launcher: ^6.3.0
+  flutter_svg: ^2.0.10+1
+  package_info_plus: ^10.2.1
+  open_filex: ^4.7.0
+  path_provider: ^2.1.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
