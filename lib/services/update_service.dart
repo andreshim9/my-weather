@@ -129,17 +129,19 @@ class _UpdateDialogWidgetState extends State<_UpdateDialogWidget> {
 
     try {
       final tempDir = await getTemporaryDirectory();
-      final savePath = '/my-weather-update.apk';
+      final savePath = '${tempDir.path}/my-weather-update.apk';
+      debugPrint('[UpdateService] Downloading APK to: $savePath from: ${widget.info.downloadUrl}');
 
       final dio = Dio();
       await dio.download(
         widget.info.downloadUrl,
         savePath,
         onReceiveProgress: (received, total) {
-          if (total != -1) {
+          if (total > 0) {
             setState(() {
               _progress = received / total;
-              _statusText = '다운로드 중 (%)';
+              final percent = (_progress * 100).toInt();
+              _statusText = '다운로드 중 ($percent%)';
             });
           }
         },
@@ -149,14 +151,21 @@ class _UpdateDialogWidgetState extends State<_UpdateDialogWidget> {
         _statusText = '설치 패키지 실행 중...';
       });
 
+      debugPrint('[UpdateService] Download finished. Launching Package Installer for: $savePath');
       // 다운로드 완료 후 APK 파일 열기 (안드로이드 OS 패키지 설치 화면 띄우기)
-      final result = await OpenFilex.open(savePath);
+      final result = await OpenFilex.open(
+        savePath,
+        type: 'application/vnd.android.package-archive',
+      );
+      debugPrint('[UpdateService] OpenFilex result: ${result.type} message: ${result.message}');
+
       if (result.type != ResultType.done && mounted) {
         setState(() {
-          _statusText = '설치 실행 완료 (알림창을 확인하세요)';
+          _statusText = '설치 실행 완료 (알림창 또는 화면을 확인하세요)';
         });
       }
-    } catch (e) {
+    } catch (e, stack) {
+      debugPrint('[UpdateService] Download & install failed: $e\n$stack');
       if (mounted) {
         setState(() {
           _isDownloading = false;
